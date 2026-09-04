@@ -12,7 +12,6 @@ from sqlalchemy.exc import SQLAlchemyError
 from .api.routes import auth, market, watchlists
 from .config import settings
 from .db.session import init_db
-from .worker import worker
 
 logging.basicConfig(
     level=logging.INFO,
@@ -24,12 +23,14 @@ log = logging.getLogger("pulse")
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     init_db()
-    await worker.start()
-    log.info("Pulse API ready (env=%s, cache=%s)", settings.environment, "redis" if settings.redis_url else "memory")
-    try:
-        yield
-    finally:
-        await worker.stop()
+
+    log.info(
+        "Pulse API ready (env=%s, cache=%s)",
+        settings.environment,
+        "redis" if settings.redis_url else "memory",
+    )
+
+    yield
 
 
 app = FastAPI(
