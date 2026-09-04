@@ -1,0 +1,3 @@
+# Only needed when you point Pulse at Postgres / Redis instead of the defaults.
+psycopg[binary]==3.2.3
+redis==5.2.1

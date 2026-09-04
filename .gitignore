@@ -1,0 +1,23 @@
+# Node
+node_modules/
+frontend/node_modules/
+.next/
+dist/
+build/
+
+# Environment
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+*-wal
+*-shm
