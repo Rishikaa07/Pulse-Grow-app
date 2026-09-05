@@ -175,7 +175,4 @@ Runtime frontend dependencies: **3** (`next`, `react`, `react-dom`).
 Runtime backend dependencies: **4** (`fastapi`, `uvicorn`, `sqlalchemy`, `pydantic`).
 
 ---
-
-## Not built
-
-Per the brief: no trading execution, no buy/sell recommendations, no brokerage integration, no social features, no AI chatbot, no cryptocurrency, no portfolio accounting. The product is focused on one thing and does it well.
+ 
